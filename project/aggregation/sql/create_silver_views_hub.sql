@@ -12,7 +12,7 @@ BEGIN
                          DROP EXTERNAL TABLE CustomersInt';
 
     -- Create the external table CustomersInt with the dynamic data_source parameter
-    SET @sqlcmd = N'CREATE EXTERNAL TABLE CustomersInt  (Customer_id INTEGER, FirstName VARCHAR(255), LastName VARCHAR(255), DOB VARCHAR(255), updated_at DATETIME, SK VARCHAR(255)) 
+    SET @sqlcmd = N'CREATE EXTERNAL TABLE CustomersInt  (Customer_id INT, FirstName VARCHAR(255), LastName VARCHAR(255), DOB DATE, updated_at DATETIME2(7), SK VARCHAR(255)) 
         WITH (LOCATION = ''' + @silverns  + '/835837/Customers'',  data_source = trainingds, FILE_FORMAT = DeltaLakeFormat)';
 
     -- Execute the dynamic SQL statement
