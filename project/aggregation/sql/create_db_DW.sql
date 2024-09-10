@@ -1,1 +1,2 @@
-test
+CREATE DATABASE edidw;
+GO
